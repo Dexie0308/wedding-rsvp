@@ -5,79 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dex & Michelle's Wedding</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff8f0;
-      color: #333;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+    color: #333;
+  }
 
-    header {
-      background-color: #ffb6b9;
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
+  header {
+    background-color: #ffb6b9;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
 
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .rsvp-form iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    color: #ff6f61;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  footer {
+    background-color: #ffb6b9;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.2; /* Tighter line spacing */
+  }
+
+  footer p {
+    margin: 0.3rem 0; /* Smaller top/bottom spacing */
+  }
+
+  @media (max-width: 600px) {
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .rsvp-form iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
+      font-size: 2rem;
     }
 
     .countdown {
-      font-size: 1.5rem;
-      text-align: center;
-      margin: 2rem 0;
-      color: #ff6f61;
+      font-size: 1.2rem;
     }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 1rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    footer {
-      background-color: #ffb6b9;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .countdown {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>
@@ -114,11 +119,11 @@
     </div>
   </section>
 
-  <footer>
-    <p>Made with ❤️ by Dex & Michelle</p>
-    <p>#GodMadeMICHooseDEX</p>
-    <p>#DexterGotHisParCHELLE</p>
-  </footer>
+<footer>
+  <p>Made with ❤️ by Dex & Michelle</p>
+  <p>#GodMadeMICHooseDEX</p>
+  <p>#DexterGotHisParCHELLE</p>
+</footer>
 
   <script>
     const countdownEl = document.getElementById('countdown');
@@ -146,5 +151,4 @@
   </script>
 </body>
 </html>
-
 
