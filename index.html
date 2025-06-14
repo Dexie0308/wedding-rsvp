@@ -17,23 +17,28 @@ header {
   background: url('https://dexie0308.github.io/wedding-rsvp/header-bg.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 6rem 1rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
+@media (max-width: 768px) {
+  header {
+    min-height: 50vh;
+    background-position: top center;
+  }
 
-header h1, header p {
-  position: relative;
-  z-index: 1;
-}
+  header h1 {
+    font-size: 1.8rem;
+  }
 
+  header p {
+    font-size: 1rem;
+  }
+}
   section {
     padding: 2rem;
     max-width: 800px;
