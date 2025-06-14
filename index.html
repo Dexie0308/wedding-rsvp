@@ -319,23 +319,24 @@ body.fade-in {
   display: block;
 }
 
-    .invitation-section {
-  padding: 2rem;
-  background-color: #fdf9f3;
+.invitation-section {
+  padding: 2rem 1rem;
+  background-color: #fef9f5;
 }
 
 .invitation-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .invitation-image img {
-  max-width: 100%;
+  width: 150px;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .invitation-text {
@@ -346,16 +347,25 @@ body.fade-in {
 .invitation-text h2 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .invitation-text h3 {
   margin-top: 1rem;
   font-size: 1.2rem;
+  color: #555;
 }
 
 .invitation-text p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #444;
+}
+
+.invitation-text a {
+  color: #c49b66;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
     
@@ -397,10 +407,10 @@ body.fade-in {
     <div class="invitation-text">
       <h2>YOU'RE INVITED TO OUR<br>MOST SPECIAL DAY!</h2>
       <p>Share with us this most momentous day<br>
-      as we exchange our marriage vows</p>
+      as we exchange our marriage vows.</p>
       <h3>VENUE AT</h3>
-      <p>Don Jose Heights Clubhouse</p>
-      <p><a href="https://maps.google.com/?q=Don+Jose+Heights+Clubhouse" target="_blank">View in Google Map</a></p>
+      <p><strong>Don Jose Heights Clubhouse</strong></p>
+      <p><a href="https://maps.google.com/?q=Don+Jose+Heights+Clubhouse" target="_blank">📍 View in Google Map</a></p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15436.639397631847!2d121.0516!3d14.7105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b07d0e1c2b5f%3A0x123456789abcdef!2sDon%20Jose%20Heights%20Clubhouse!5e0!3m2!1sen!2sph!4v0000000000"
         width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
@@ -408,6 +418,7 @@ body.fade-in {
     </div>
   </div>
 </section>
+
 
   
 <section class="countdown-section">
