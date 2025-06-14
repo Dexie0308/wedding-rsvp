@@ -126,6 +126,87 @@ header {
   background-color: #ff6f61;
 }
 
+.countdown-section {
+  background: url('https://dexie0308.github.io/wedding-rsvp/assets/save-the-date-bg.jpg') center/cover no-repeat;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 4rem 1rem;
+}
+
+.countdown-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.countdown-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.countdown-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.countdown-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 70px;
+  transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+  transform: scale(1.1);
+}
+
+.time-box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.time-box small {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .countdown-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .time-box span {
+    font-size: 1.5rem;
+  }
+}
+
 
 </style>
 </head>
@@ -135,9 +216,19 @@ header {
     <p>We're getting married! Join us on November 08, 2025</p>
   </header>
 
-  <section>
-    <div class="countdown" id="countdown"></div>
-  </section>
+<section class="countdown-section">
+  <div class="countdown-overlay">
+    <h2>Save the Date</h2>
+    <p>Saturday, 8th of November 2025 at 3:00 PM</p>
+    <div class="countdown" id="countdown">
+      <div class="time-box"><span id="days">00</span><small>Days</small></div>
+      <div class="time-box"><span id="hours">00</span><small>Hours</small></div>
+      <div class="time-box"><span id="minutes">00</span><small>Minutes</small></div>
+      <div class="time-box"><span id="seconds">00</span><small>Seconds</small></div>
+    </div>
+  </div>
+</section>
+
 
 
   <section>
@@ -188,30 +279,32 @@ header {
   <p>#DexterGotHisParCHELLE</p>
 </footer>
 
-  <script>
-    const countdownEl = document.getElementById('countdown');
-    const weddingDate = new Date('November 08, 2025 15:00:00').getTime();
+<script>
+  const countdownDate = new Date("November 08, 2025 15:00:00").getTime();
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
 
-      if (distance < 0) {
-        countdownEl.innerHTML = "We're Married! 💍";
-        return;
-      }
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "We're Married! 💍";
+      return;
+    }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
 
-      countdownEl.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
 
