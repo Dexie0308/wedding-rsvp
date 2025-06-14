@@ -289,6 +289,15 @@ body.fade-in {
   to { opacity: 0; visibility: hidden; }
 }    
 
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+    
 </style>
 </head>
 <body>
@@ -307,10 +316,15 @@ body.fade-in {
 
   
   <header>
-    <h1>Dex & Michelle</h1>
+    <h1>Dexter & Michelle</h1>
     <p>We're getting married! Join us on November 08, 2025</p>
   </header>
 
+<img src="https://dexie0308.github.io/wedding-rsvp/just-love-just-us.jpg" 
+     alt="Just Love Just Us" 
+     class="fade-in"
+     style="width:100%; max-height:500px; object-fit:cover; display:block;">
+  
 <section class="countdown-section">
   <div class="countdown-overlay">
     <h2>Save the Date</h2>
