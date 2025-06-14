@@ -297,6 +297,14 @@ body.fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+.full-image-section img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  display: block;
+}
+
     
 </style>
 </head>
@@ -320,11 +328,13 @@ body.fade-in {
     <p>We're getting married! Join us on November 08, 2025</p>
   </header>
 
-<img src="https://dexie0308.github.io/wedding-rsvp/just-love-just-us.jpg" 
+  <section class="full-image-section">
+  <img src="https://dexie0308.github.io/wedding-rsvp/just-love-just-us.jpg" 
      alt="Just Love Just Us" 
      class="fade-in"
      style="width:100%; max-height:500px; object-fit:cover; display:block;">
-  
+  </section>
+    
 <section class="countdown-section">
   <div class="countdown-overlay">
     <h2>Save the Date</h2>
