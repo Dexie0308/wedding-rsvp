@@ -13,6 +13,40 @@
     color: #333;
   }
 
+    /* TAP TO START SCREEN */
+    #start-screen {
+      position: fixed;
+      inset: 0;
+      background-color: #c9c4b5;
+      color: white;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      transition: opacity 1s ease;
+    }
+
+    #start-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #start-screen h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    #start-screen p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #eee;
+    }
+
+    
 header {
   background: url('https://dexie0308.github.io/wedding-rsvp/header-bg.jpg') center/cover no-repeat;
   color: white;
@@ -209,10 +243,69 @@ header {
   }
 }
 
+/* Fade-in for body */
+body.fade-in {
+  animation: fadeInBody 1s ease-in forwards;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Start Screen */
+.start-screen {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.start-screen h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.start-screen p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Smooth fade-out of the start screen */
+.start-screen.fade-out {
+  animation: fadeOutScreen 1s ease forwards;
+}
+
+@keyframes fadeOutScreen {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}    
 
 </style>
 </head>
 <body>
+
+  <!-- TAP TO START OVERLAY -->
+  <div id="start-screen" class="start-screen">
+    <div class="start-overlay">
+      <h2>Tap anywhere to begin</h2>
+      <p>Warning: Music will play 🎵</p>
+    </div>
+  </div>
+
+  <!-- BACKGROUND MUSIC -->
+<audio id="bg-music" src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/bg-music.mp3" loop>
+</audio>
+
+  
   <header>
     <h1>Dex & Michelle</h1>
     <p>We're getting married! Join us on November 08, 2025</p>
@@ -282,6 +375,7 @@ header {
 </footer>
 
 <script>
+  //Countdown
   const countdownDate = new Date("November 08, 2025 15:00:00").getTime();
 
   function updateCountdown() {
@@ -306,6 +400,24 @@ header {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // Start music and hide overlay
+  const startScreen = document.getElementById("start-screen");
+  const bgMusic = document.getElementById("bg-music");
+
+  function startExperience() {
+    startScreen.classList.add("fade-out");
+    document.body.classList.add("fade-in");
+    bgMusic.play().catch(err => {
+      console.warn("Autoplay blocked:", err);
+    });
+    document.removeEventListener("click", startExperience);
+    document.removeEventListener("touchstart", startExperience);
+  }
+
+  document.addEventListener("click", startExperience);
+  document.addEventListener("touchstart", startExperience);
+  
 </script>
 </body>
 </html>
