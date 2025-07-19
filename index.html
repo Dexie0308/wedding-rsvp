@@ -624,15 +624,16 @@ body.fade-in {
   setInterval(updateCountdown, 1000);
 
   // Start music and hide overlay
-  const startScreen = document.getElementById("wedding-invite");
+  const startScreen = document.getElementById("start-screen");
   const bgMusic = document.getElementById("bg-music");
 
   function startExperience() {
     startScreen.classList.add("fade-out");
     document.body.classList.add("fade-in");
     bgMusic.play().catch(err => {
-      console.warn("Autoplay blocked:", err);
     });
+    document.querySelector(".wedding-invite").scrollIntoView({ behavior: "smooth" });
+
     document.removeEventListener("click", startExperience);
     document.removeEventListener("touchstart", startExperience);
   }
