@@ -6,15 +6,87 @@
   <title>Dex & Michelle's Wedding</title>
   <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
   <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fcfcfc;
-    color: #333;
-  }
+	<!-- @media -->
+	@media (max-width: 768px) {
+		header {
+		  min-height: 50vh;
+		  background-position: top center;
+		  margin-bottom: 0rem;
+		}
+		header h1 {
+		  font-size: 1.8rem;
+		  text-shadow:
+		  -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		  -1px  1px 0 #000,
+		  1px  1px 0 #000;
+		}
 
-    /* TAP TO START SCREEN */
+		header h2 {
+		  font-size: 1.5rem;
+		  letter-spacing: 1px;
+		  margin-bottom: 0.5rem;
+		  text-transform: uppercase;
+		  font-weight: 300;
+		  text-shadow:
+		  -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		  -1px  1px 0 #000,
+		  1px  1px 0 #000;
+		}
+
+		header p {
+		  font-size: 1rem;
+		  text-shadow:
+		  -1px -1px 0 #000,  
+		  1px -1px 0 #000,
+		  -1px  1px 0 #000,
+		  1px  1px 0 #000;
+		}
+	}	
+	@media (max-width: 600px) {
+		header h1 {
+		  font-size: 2rem;
+		}
+
+		.countdown {
+		  font-size: 1.2rem;
+		}
+
+		.countdown-overlay h2 {
+		  font-size: 1.8rem;
+		}
+	}
+	
+	@keyframes fadeIn {
+		0% { opacity: 0; transform: scale(0.8); }
+		100% { opacity: 1; transform: scale(1); }
+}
+	@keyframes fadeInBody {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+	
+	@keyframes fadeIn {
+	  from { opacity: 0; }
+	  to   { opacity: 1; }
+	}
+	
+	@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap');
+
+	@keyframes fadeInUp {
+	from {
+		  opacity: 0;
+		  transform: translateY(40px);
+		}
+	to {
+		  opacity: 1;
+		  transform: translateY(0);
+		}
+	}
+	
+	<!-- START OF ID SELECTOR -->
+     /* TAP TO START SCREEN */
     #start-screen {
       position: fixed;
       inset: 0;
@@ -28,13 +100,13 @@
       text-align: center;
       transition: opacity 1s ease;
     }
-
-    #start-screen.fade-out {
+	
+	#start-screen.fade-out {
       opacity: 0;
       pointer-events: none;
     }
-
-    #start-screen h1 {
+	
+	#start-screen h1 {
       font-size: 2rem;
       margin: 0;
       color: #fff;
@@ -46,467 +118,311 @@
       margin-top: 1rem;
       color: #eee;
     }
+	
+	<!-- START OF CLASS SELECTOR -->
+	.rsvp-form iframe {
+	  width: 100%;
+	  height: 800px;
+	  border: none;
+	}
 
-    
-header {
-  background: url('https://dexie0308.github.io/wedding-rsvp/new_header.JPG') center center/cover no-repeat;
-  color: white;
-  text-align: left;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  position: relative;
-  margin-bottom: 0rem;
-  padding: 2rem;
-}
+	.countdown {
+	  font-size: 1.5rem;
+	  text-align: center;
+	  margin: 2rem 0;
+	  color: #FFFFFF;
+	}
 
-@media (max-width: 768px) {
-  header {
-    min-height: 50vh;
-    background-position: top center;
-    margin-bottom: 0rem;
-  }
+	.gallery {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	  gap: 10px;
+	  padding: 1rem;
+	}
 
- header h1 {
-  font-size: 1.8rem;
-  text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
+	.gallery img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	}
 
-  header h2 {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
+	.menu-links {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 1rem;
+	  justify-content: center;
+	  padding: 1rem 0;
+	}
 
- header p {
-  font-size: 1rem;
-  text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
+	.menu-links a {
+	  background-color: #ffb6b9;
+	  color: white;
+	  text-decoration: none;
+	  padding: 0.75rem 1.2rem;
+	  border-radius: 10px;
+	  font-weight: bold;
+	  transition: background-color 0.3s ease;
+	}
 
-}
-  section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-  }
+	.menu-links a:hover {
+	  background-color: #ff6f61;
+	}
 
-  .rsvp-form iframe {
-    width: 100%;
-    height: 800px;
-    border: none;
-  }
+	.countdown-section {
+	  background: url('https://dexie0308.github.io/wedding-rsvp/save-the-date-bg.jpg') center/cover no-repeat;
+	  position: relative;
+	  text-align: center;
+	  color: white;
+	  padding: 4rem 1rem;
+	}
 
-  .countdown {
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 2rem 0;
-    color: #FFFFFF;
-  }
+	.countdown-section::before {
+	  content: "";
+	  position: absolute;
+	  top: 0; left: 0; right: 0; bottom: 0;
+	  background: rgba(0, 0, 0, 0.5);
+	  z-index: 0;
+	}
 
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 1rem;
-  }
+	.countdown-overlay {
+	  position: relative;
+	  z-index: 1;
+	  max-width: 700px;
+	  margin: auto;
+	}
 
-  .gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+	countdown-overlay h2 {
+	  font-size: 2.5rem;
+	  margin-bottom: 0.5rem;
+	  text-shadow: 1px 1px 3px black;
+	}
 
-  footer {
-    background-color: #ffb6b9;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    line-height: 1.2; /* Tighter line spacing */
-  }
+	.countdown-overlay p {
+	  font-size: 1.2rem;
+	  margin-bottom: 2rem;
+	  text-shadow: 1px 1px 3px black;
+	}
 
-  footer p {
-    margin: 0.3rem 0; /* Smaller top/bottom spacing */
-  }
+	.countdown {
+	  display: flex;
+	  justify-content: center;
+	  gap: 1rem;
+	  flex-wrap: wrap;
+	}
 
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
+	.time-box {
+	  background: rgba(255, 255, 255, 0.2);
+	  padding: 1rem;
+	  border-radius: 10px;
+	  min-width: 70px;
+	  transition: transform 0.3s ease;
+	}
+
+	.time-box:hover {
+	  transform: scale(1.1);
+	}
+
+	.time-box span {
+	  display: block;
+	  font-size: 2rem;
+	  font-weight: bold;
+	  animation: fadeIn 0.8s ease-in-out;
+	}
+
+	.time-box small {
+	  font-size: 0.9rem;
+	  color: #eee;
+	}
+	
+	.time-box span {
+	  font-size: 1.5rem;
+	}
+	
+	.start-screen {
+	  position: fixed;
+	  top: 0; left: 0; right: 0; bottom: 0;
+	  background-color: rgba(0, 0, 0, 0.85);
+	  color: white;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  z-index: 9999;
+	  text-align: center;
+	  padding: 2rem;
+	  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.start-screen h2 {
+	  font-size: 2rem;
+	  margin-bottom: 1rem;
+	}
+
+	.start-screen p {
+	  font-size: 1rem;
+	  opacity: 0.8;
+	}
+
+	.start-screen.fade-out {
+	  animation: fadeOutScreen 1s ease forwards;
+	}
+	
+	.full-image-section img {
+	  max-width: 100%;
+	  height: auto;
+	  object-fit: contain;
+	  display: block;
+	}
+
+	.invitation-section {
+	  padding: 2rem 1rem;
+	  background-color: #fef9f5;
+	}
+
+	.invitation-container {
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: center;
+	  gap: 2rem;
+	  justify-content: center;
+	  max-width: 1000px;
+	  margin: 0 auto;
+	}
+
+	.invitation-image img {
+	  width: 150px;
+	  height: auto;
+	  }
+
+	.invitation-text {
+	  flex: 1;
+	  min-width: 280px;
+	}
+
+	.invitation-text h2 {
+	  font-size: 1.8rem;
+	  margin-bottom: 0.5rem;
+	  color: #333;
+	}
+
+	.invitation-text h3 {
+	  margin-top: 1rem;
+	  font-size: 1.2rem;
+	  color: #555;
+	}
+
+	.invitation-text p {
+	  font-size: 1rem;
+	  line-height: 1.6;
+	  color: #444;
+	}
+
+	.invitation-text a {
+	  color: #c49b66;
+	  text-decoration: underline;
+	  font-weight: bold;
+	}
+
+	.rsvp-form h2 {
+	  font-family: 'Vibur', cursive;
+	  font-size: 3.8rem;
+	  text-align: center;
+	}
+
+	.gallery {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 10px;
+	  justify-content: center;
+	}
+
+	.gallery-item {
+	  flex: 1 1 200px;
+	  filter: blur(10px);
+	  transition: filter 0.3s ease, transform 0.3s ease;
+	  position: relative;
+	  z-index: 1;
+	}
+
+	.gallery-item:hover {
+	  filter: none;
+	  transform: scale(1.3);
+	  z-index: 2;
+	}
+
+	.gallery-item img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	  border: 3px solid #c49b66; /* gold border */
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	  transition: transform 0.3s ease;
+	}
+	
+	<!-- START OF DIV SELECTOR -->
+	header {
+      background: url('https://dexie0308.github.io/wedding-rsvp/new_header.JPG') center center/cover no-repeat;
+      color: white;
+	  text-align: left;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      margin-bottom: 0rem;
+      padding: 2rem;
     }
 
-    .countdown {
-      font-size: 1.2rem;
+	body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fcfcfc;
+      color: #333;
     }
+	
+	body.fade-in {
+	  animation: fadeInBody 1s ease-in forwards;
+	}
+	
+	footer {
+      background-color: #ffb6b9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      line-height: 1.2; /* Tighter line spacing */
+	}
 
-    .countdown-overlay h2 {
-    font-size: 1.8rem;
-    }
-  }
-
-.menu-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-.menu-links a {
-  background-color: #ffb6b9;
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.2rem;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.menu-links a:hover {
-  background-color: #ff6f61;
-}
-
-.countdown-section {
-  background: url('https://dexie0308.github.io/wedding-rsvp/save-the-date-bg.jpg') center/cover no-repeat;
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 4rem 1rem;
-}
-
-.countdown-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-.countdown-overlay {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: auto;
-}
-
-.countdown-overlay h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 3px black;
-}
-
-.countdown-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 3px black;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.time-box {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-  border-radius: 10px;
-  min-width: 70px;
-  transition: transform 0.3s ease;
-}
-
-.time-box:hover {
-  transform: scale(1.1);
-}
-
-.time-box span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.time-box small {
-  font-size: 0.9rem;
-  color: #eee;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-
-
-  .time-box span {
-    font-size: 1.5rem;
-  }
-
-
-/* Fade-in for body */
-body.fade-in {
-  animation: fadeInBody 1s ease-in forwards;
-}
-
-@keyframes fadeInBody {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Start Screen */
-.start-screen {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-  text-align: center;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.start-screen h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.start-screen p {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* Smooth fade-out of the start screen */
-.start-screen.fade-out {
-  animation: fadeOutScreen 1s ease forwards;
-}
-
-@keyframes fadeOutScreen {
-  from { opacity: 1; }
-  to { opacity: 0; visibility: hidden; }
-}    
-
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.full-image-section img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.invitation-section {
-  padding: 2rem 1rem;
-  background-color: #fef9f5;
-}
-
-.invitation-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.invitation-image img {
-  width: 150px;
-  height: auto;
-}
-
-.invitation-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.invitation-text h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.invitation-text h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.invitation-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-.invitation-text a {
-  color: #c49b66;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.rsvp-form h2 {
-  font-family: 'Vibur', cursive;
-  font-size: 3.8rem;
-  text-align: center;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* Blur all images by default */
-.gallery-item {
-  flex: 1 1 200px;
-  filter: blur(10px);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-/* When hovered, clear and zoom the image */
-.gallery-item:hover {
-  filter: none;
-  transform: scale(1.3);
-  z-index: 2;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 3px solid #c49b66; /* gold border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap');
-
-
-
-.invite-container {
-  max-width: 400px;
-  animation: fadeInUp 1.2s ease-in-out;
-}
-
-.envelope-icon {
-  width: 60px;
-  margin-bottom: 20px;
-}
-
-.invite-title {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.invite-title strong {
-  font-weight: 600;
-  display: block;
-}
-
-.invite-subtitle {
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: #999;
-  margin-bottom: 10px;
-}
-
-.couple-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #c49b66;
-  margin: 10px 0 15px;
-}
-
-.invite-date {
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 25px;
-}
-
-.open-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #fff;
-  border: 2px solid #c49b66;
-  color: #c49b66;
-  text-decoration: none;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.open-button:hover {
-  background: #c49b66;
-  color: #fff;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
- 
+	footer p {
+     margin: 0.3rem 0; /* Smaller top/bottom spacing */
+	}
+	
+	section {
+      padding: 2rem;
+      max-width: 800px;
+	  margin: auto;
+	}
+	
 </style>
 </head>
+
 <body>
-
-  <!-- TAP TO START OVERLAY -->
+	<!-- TAP TO START OVERLAY -->
 <section class="wedding-invite">
-  <div class="invite-container">
-    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Envelope" class="envelope-icon">
-
-    <p class="invite-title">Dear,<br><strong>FAMILY, FRIENDS</strong><br>You are invited</p>
-
-    <p class="invite-subtitle">IN THE WEDDING OF</p>
-
-    <h1 class="couple-names">Dexter and Michelle</h1>
-
-    <p class="invite-date">11.08.2025 | 3:00 PM</p>
-
-    <a href="#main" class="open-button">
-      <span>📨 Open Invitation</span>
-    </a>
-  </div>
+<div id="start-screen">
+	<div class="invite-container">
+		<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Envelope" class="envelope-icon">
+		<p class="invite-title">Dear,<br><strong>FAMILY, FRIENDS</strong><br>You are invited</p>
+		<p class="invite-subtitle">IN THE WEDDING OF</p>
+		<h1 class="couple-names">Dexter and Michelle</h1>
+		<p class="invite-date">11.08.2025 | 3:00 PM</p>
+		<a href="#main" class="open-button">
+			<span>📨 Open Invitation</span>
+			</a>
+	</div>
+</div>
 </section>
-
 
   <!-- BACKGROUND MUSIC -->
 <audio id="bg-music" src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/bg-music.mp3" loop>
