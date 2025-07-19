@@ -408,18 +408,114 @@ body.fade-in {
   transition: transform 0.3s ease;
 }
 
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap');
+
+.wedding-invite {
+  height: 100vh;
+  background-color: #fefaf6; /* soft cream/pastel */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+
+.invite-container {
+  max-width: 400px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.envelope-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.invite-title {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.invite-title strong {
+  font-weight: 600;
+  display: block;
+}
+
+.invite-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.couple-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #c49b66;
+  margin: 10px 0 15px;
+}
+
+.invite-date {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.open-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border: 2px solid #c49b66;
+  color: #c49b66;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.open-button:hover {
+  background: #c49b66;
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
  
 </style>
 </head>
 <body>
 
   <!-- TAP TO START OVERLAY -->
-  <div id="start-screen" class="start-screen">
-    <div class="start-overlay">
-      <h2>Tap anywhere to start</h2>
-      <p>Music will play 🎵</p>
-    </div>
+<section class="wedding-invite">
+  <div class="invite-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Envelope" class="envelope-icon">
+
+    <p class="invite-title">Dear,<br><strong>FAMILY, FRIENDS</strong><br>You are invited</p>
+
+    <p class="invite-subtitle">IN THE WEDDING OF</p>
+
+    <h1 class="couple-names">Dexter and Michelle</h1>
+
+    <p class="invite-date">11.08.2025 | 3:00 PM</p>
+
+    <a href="#main" class="open-button">
+      <span>📨 Open Invitation</span>
+    </a>
   </div>
+</section>
+
 
   <!-- BACKGROUND MUSIC -->
 <audio id="bg-music" src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/bg-music.mp3" loop>
