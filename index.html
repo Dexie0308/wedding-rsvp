@@ -436,7 +436,7 @@ body.fade-in {
   line-height: 2 !;
   margin-top: 0; /* Removes default margin */
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .invite-title strong {
@@ -476,25 +476,27 @@ body.fade-in {
     font-family: 'Montserrat', 'Futura', 'Helvetica Neue', sans-serif;
     font-size: 0.9rem;
     color: black !important;
-    padding-top: 30px;
+    padding-top: 0px;
   }
 
 .open-button {
   display: inline-block;
-  padding: 10px 20px;
-  background: #fff;
-  border: 2px solid #f28ba8;
-  color: #f28ba8;
+  padding: 12px 24px;
+  background-color: #b1a5e6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
   text-decoration: none;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .open-button:hover {
-  background: #c49b66;
+  background-color: #b1a5e6;
   color: #fff;
+  transform: scale(1.05);
 }
 
 @keyframes fadeInUp {
@@ -510,24 +512,44 @@ body.fade-in {
 
  .map-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #c49b66;
-  text-decoration: none;
-  border: 2px solid #c49b66;
+  padding: 12px 24px;
+  background-color: #b1a5e6;
+  color: white !important;
   font-weight: bold;
-  border-radius: 30px;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1.5rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  font-size: 0.95rem;
 }
 
 .map-button:hover {
-  background-color: #c49b66;
+  background-color: #b1a5e6;
   color: #fff;
   transform: scale(1.05);
 }
 
- 
+ .rsvp-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #b1a5e6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rsvp-button:hover {
+  background-color: #b1a5e6;
+  color: #fff;
+  transform: scale(1.05);
+}
+
 </style>
 </head>
 <body>
@@ -569,7 +591,12 @@ body.fade-in {
     <p>Please let us know if you’ll be able to attend our wedding by filling out the form below:</p>
     <p>Kindly respond on or before September 1, 2025</p>
     <!-- Replace the src URL with your actual Google Form embed link -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTMD3bG3a7WcrPSnD5KNZMopYq2j-gOQEsDm6HcNmh3BG-qg/viewform?embedded=true" width="640" height="1110" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfTMD3bG3a7WcrPSnD5KNZMopYq2j-gOQEsDm6HcNmh3BG-qg/viewform" 
+   target="_blank" 
+   class="rsvp-button">
+  RSVP Form
+</a>
+
   </section>
   
   <section class="full-image-section">
@@ -614,8 +641,6 @@ body.fade-in {
   <h2>Gallery</h2>
   <div class="gallery">
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/11.jpg" alt="Engagement Photo 11"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/13.jpg" alt="Engagement Photo 13"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
@@ -623,8 +648,6 @@ body.fade-in {
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/19.jpg" alt="Engagement Photo 19"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23.jpg" alt="Engagement Photo 23"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/21.jpg" alt="Engagement Photo 21"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/22.jpg" alt="Engagement Photo 22"></div>
   </div>
 </section>
 
