@@ -65,7 +65,7 @@ header {
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
-  margin-bottom: 0rem;
+  margin-bottom: 5rem !important;
   padding: 2rem;
 }
 
@@ -565,25 +565,18 @@ body.fade-in {
 }
 
 .slider-track {
-  display: flex; /* Makes images in a row */
+  display: flex;
   animation: scroll 20s linear infinite;
 }
 
 .slider-track img {
-  width: 200px;
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: clamp(150px, 25vw, 300px); /* Responsive image width */
   height: auto;
   margin: 0 10px;
   border-radius: 10px;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 </style>
 </head>
@@ -619,6 +612,39 @@ body.fade-in {
     <p>We're getting married! Join us on November 08, 2025</p>
     </div>
   </header>
+  
+  
+<div class="image-slider">
+  <div class="slider-track" id="slider-track">
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/17.jpg" alt="Engagement Photo 17"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/24_1.jpg" alt="Engagement Photo 24"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23_1.jpg" alt="Engagement Photo 23"></div>	
+        <!-- Repeat for seamless looping -->
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/17.jpg" alt="Engagement Photo 17"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/24_1.jpg" alt="Engagement Photo 24"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23_1.jpg" alt="Engagement Photo 23"></div>
+    
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/17.jpg" alt="Engagement Photo 17"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/24_1.jpg" alt="Engagement Photo 24"></div>
+    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23_1.jpg" alt="Engagement Photo 23"></div>	
+  </div>
+</div>
+
 
   <section class="full-image-section">
   <img src="https://dexie0308.github.io/wedding-rsvp/just-love-just-us.gif" 
@@ -670,28 +696,6 @@ body.fade-in {
     RSVP Form
   </a>
 </section>
-
-<div class="image-slider">
-  <div class="slider-track">
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/17.jpg" alt="Engagement Photo 17"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/19.jpg" alt="Engagement Photo 19"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23.jpg" alt="Engagement Photo 23"></div>	
-        <!-- Repeat for seamless looping -->
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/15.jpg" alt="Engagement Photo 15"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/16.jpg" alt="Engagement Photo 16"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/17.jpg" alt="Engagement Photo 17"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/18.jpg" alt="Engagement Photo 18"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/19.jpg" alt="Engagement Photo 19"></div>
-    <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/23.jpg" alt="Engagement Photo 23"></div>	
-  </div>
-</div>
 
 
 
@@ -746,5 +750,37 @@ body.fade-in {
     startExperience();
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("slider-track");
+  const images = Array.from(track.children);
+
+  // Duplicate images for seamless loop
+  images.forEach(img => {
+    const clone = img.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  let scrollSpeed = 1; // px per frame
+  let scrollPos = 0;
+
+  function scrollLoop() {
+    scrollPos -= scrollSpeed;
+
+    // If first set is fully scrolled, reset
+    const firstSetWidth = images.reduce((total, img) => total + img.offsetWidth + 20, 0); // +20 for margins
+    if (Math.abs(scrollPos) >= firstSetWidth) {
+      scrollPos = 0;
+    }
+
+    track.style.transform = `translateX(${scrollPos}px)`;
+    requestAnimationFrame(scrollLoop);
+  }
+
+  scrollLoop();
+});
+</script>
+
 </body>
 </html>
