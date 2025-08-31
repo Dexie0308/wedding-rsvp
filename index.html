@@ -61,6 +61,7 @@
   width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 2rem;
 }
 
 
@@ -184,7 +185,7 @@
 }
 
 .countdown-section {
-  background: url('https://dexie0308.github.io/wedding-rsvp/save-the-date-bg.jpg') center/cover no-repeat;
+  background: url('https://dexie0308.github.io/wedding-rsvp/JAS02696.jpg') center/cover no-repeat;
   position: relative;
   text-align: center;
   color: white;
@@ -207,16 +208,19 @@
 }
 
 .countdown-overlay h2 {
-  font-size: 2.5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.8rem;
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 3px black;
 }
 
 .countdown-overlay p {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px black;
 }
+
 
 .countdown {
   display: flex;
@@ -571,6 +575,43 @@ body.fade-in {
   border-radius: 10px;
 }
 
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px); /* slight offset */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#intro-video-screen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: none; /* hidden at first */
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fill the screen */
+  object-position: top;    /* keep top aligned, crop bottom if needed */
+}
+
+
+body.fade-in {
+  animation: fadeInBody 1s ease-in forwards;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 </style>
 </head>
@@ -598,6 +639,15 @@ body.fade-in {
 <audio id="bg-music" src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/bg-music.mp3" loop>
 </audio>
 
+<!-- INTRO VIDEO OVERLAY -->
+<div id="intro-video-screen">
+  <video id="intro-video" autoplay muted playsinline>
+    <source src="https://dexie0308.github.io/wedding-rsvp/Dexter & Michelle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
   
 <header>
   <img src="https://dexie0308.github.io/wedding-rsvp/header.gif" alt="Header GIF" class="header-gif">
@@ -605,7 +655,7 @@ body.fade-in {
 
   
   
-<div class="image-slider">
+<div class="image-slider fade-in-scroll">
   <div class="slider-track" id="slider-track">
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/10.jpg" alt="Engagement Photo 10"></div>
     <div class="gallery-item"><img src="https://dexie0308.github.io/wedding-rsvp/14.jpg" alt="Engagement Photo 14"></div>
@@ -652,17 +702,16 @@ body.fade-in {
 </div>
 
 
-  <section class="full-image-section">
+  <section class="full-image-section fade-in-scroll">
   <img src="https://dexie0308.github.io/wedding-rsvp/just-love-just-us.gif" 
      alt="Just Love Just Us" 
-     class="fade-in"
      style="width:100%; height:auto; display:block;">
   </section>
 
-<section class="rsvp-container">
+<section class="rsvp-container fade-in-scroll">
   <img src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/location.gif" 
        alt="RSVP Animation" 
-       style="width:100%; height:auto; display:block;
+       style="width:100%; height:auto; display:block;"
        class="rsvp-gif">
 
   <a href="https://maps.google.com/?q=Don+Jose+Heights+Clubhouse" 
@@ -672,7 +721,7 @@ body.fade-in {
   </a>
 </section>
   
-<section class="countdown-section">
+<section class="countdown-section fade-in-scroll">
   <div class="countdown-overlay">
     <h2>Save the Date</h2>
     <p>Saturday, 8th of November 2025 at 3:00 PM</p>
@@ -685,7 +734,7 @@ body.fade-in {
   </div>
 </section>
 
-<section class="full-image-section">
+<section class="full-image-section fade-in-scroll">
   <div class="rsvp-container">
     <img src="https://raw.githubusercontent.com/Dexie0308/wedding-rsvp/main/RSVP.gif" 
          alt="RSVP Animation" 
@@ -782,6 +831,64 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollLoop();
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeElems = document.querySelectorAll(".fade-in-scroll");
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback for very old browsers
+    fadeElems.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Wait a frame so the initial (opacity:0) state paints, then add class
+        requestAnimationFrame(() => {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        });
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: "0px 0px -15% 0px", // start a bit before fully in view
+    threshold: 0
+  });
+
+  fadeElems.forEach(el => observer.observe(el));
+});
+</script>
+
+<script>
+function startExperience() {
+  // Hide the tap-to-start screen
+  startScreen.classList.add("fade-out");
+
+  // Show video overlay
+  const introVideoScreen = document.getElementById("intro-video-screen");
+  const introVideo = document.getElementById("intro-video");
+
+  introVideoScreen.style.display = "flex"; // show overlay
+  introVideo.currentTime = 0;
+  introVideo.play();
+
+  // Disable skipping
+  introVideo.controls = false;
+
+  // When video ends (or after 5s), hide it and continue
+  setTimeout(() => {
+    introVideoScreen.style.display = "none";
+    document.body.classList.add("fade-in");
+    bgMusic.play().catch(() => {});
+    document.querySelector("header").scrollIntoView({ behavior: "smooth" });
+  }, 5000); // 5 seconds
+}
+</script>
+
+
 
 </body>
 </html>
